@@ -10,6 +10,7 @@ nav:
   - Operadores: operadores.md
   - "Salida de datos": salida.md
   - "Entrada de datos": entrada.md
+  - Funcionetes: funcionetes.md
   - "Estructuras de control": control.md
   - Excepciones: excepciones.md
   - Comentarios: comentarios.md

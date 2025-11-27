@@ -14,6 +14,7 @@
 | [Control de flujo](control.md) | `if`, `switch`, bucles `while`, `do-while`, `for` | Comparativa con Python y ejemplos esquemáticos |
 | Excepciones y comentarios: [Excepciones](excepciones.md) · [Comentarios](comentarios.md) | `try-catch`, tipos comunes, documentación | Cómo evitar que el programa reviente y documentar lo justo |
 | Ejercicios y anexos: [Ejercicios](ejercicios.md) · [Funciones IO](anexos/funciones_io.md) · [Fechas](anexos/fechas.md) | 26 retos resueltos y librerías de apoyo | Enunciado + solución + explicación “para tontos” |
+| [Funcionetes](funcionetes.md) | Librería casera para lectura con validaciones | Usa `Funcionetes.lligInt`, `lligFloat`, etc. en los ejercicios |
 
 !!! tip "Cómo usar esta chuleta"
     * Lee primero la sección que necesitas y usa los mini resúmenes.
@@ -26,7 +27,8 @@
 2. **Crea un proyecto** con IntelliJ y genera tu primera clase `HolaMundo`.
 3. **Practica tipos y operadores** con las tablas en [Tipos y datos](datos.md) y [Operadores](operadores.md).
 4. **Aprende a leer y escribir en consola** con [Salida](salida.md) y [Entrada](entrada.md).
-5. **Haz los ejercicios** del bloque correspondiente antes de saltar al siguiente.
+5. **Configura tu librería `Funcionetes`** siguiendo [esta referencia](funcionetes.md) para reutilizarla en cada práctica.
+6. **Haz los ejercicios** del bloque correspondiente antes de saltar al siguiente.
 
 ## Recursos visuales incluidos
 
