@@ -10,10 +10,10 @@
 | [Herramientas básicas](herramientas.md) | JVM, JDK, IDE IntelliJ y sus atajos | Checklist para instalar, compilar y ejecutar sin dramas |
 | [Tipos y datos](datos.md) | Tipos primitivos, constantes y palabras reservadas | Tabla de referencia rápida para no dudar con `int`, `double`, etc. |
 | [Operadores](operadores.md) | Aritméticos, lógicos, ternario, incrementales | Ejemplos claros con mini recordatorios |
-| [Entrada / salida](salida.md, entrada.md) | `System.out.print`, `Scanner`, `BufferedReader` | Plantillas para mostrar y leer datos como un ninja |
+| Entrada / salida: [Salida](salida.md) · [Entrada](entrada.md) | `System.out.print`, `Scanner`, `BufferedReader` | Plantillas para mostrar y leer datos como un ninja |
 | [Control de flujo](control.md) | `if`, `switch`, bucles `while`, `do-while`, `for` | Comparativa con Python y ejemplos esquemáticos |
-| [Excepciones y comentarios](excepciones.md, comentarios.md) | `try-catch`, tipos comunes, documentación | Cómo evitar que el programa reviente y documentar lo justo |
-| [Ejercicios + anexos](ejercicios.md, anexos/funciones_io.md, anexos/fechas.md) | 26 retos resueltos y librerías de apoyo | Enunciado + solución + explicación “para tontos” |
+| Excepciones y comentarios: [Excepciones](excepciones.md) · [Comentarios](comentarios.md) | `try-catch`, tipos comunes, documentación | Cómo evitar que el programa reviente y documentar lo justo |
+| Ejercicios y anexos: [Ejercicios](ejercicios.md) · [Funciones IO](anexos/funciones_io.md) · [Fechas](anexos/fechas.md) | 26 retos resueltos y librerías de apoyo | Enunciado + solución + explicación “para tontos” |
 
 !!! tip "Cómo usar esta chuleta"
     * Lee primero la sección que necesitas y usa los mini resúmenes.

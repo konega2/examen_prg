@@ -11,7 +11,7 @@ Java se **compila** a bytecode y después se **interpreta** dentro de la JVM.
 !!! note "¿Es lenta la JVM?"
     No: la JVM usa técnicas de compilación *Just-In-Time* (JIT). Suele ser más rápida que lenguajes puramente interpretados como el antiguo Visual Basic, aunque algo más lenta que C++ nativo.
 
-## 2.2 JDK (Java Development Kit)
+## 2.2 JDK (Java Development Kit) {#jdk-y-herramientas}
 
 El JDK incluye todas las herramientas para programar:
 
@@ -40,7 +40,7 @@ Entorno de JetBrains con dos ediciones:
 
 Descarga desde: <https://www.jetbrains.com/idea/download/other.html>
 
-### Instalación con JetBrains Toolbox
+### Instalación con JetBrains Toolbox {#instalacion-con-toolbox}
 
 1. Descarga JetBrains Toolbox desde la web oficial.
 2. Instálalo y ejecuta la app.
