@@ -217,17 +217,11 @@ Pide tres enteros y muestra el mayor con `if-else`.
 **Solución en Java**
 
 ```java
-import java.util.Scanner;
-
 public class Ejercicio07 {
     public static void main(String[] args) {
-        Scanner teclado = new Scanner(System.in);
-        System.out.print("Número 1: ");
-        int a = teclado.nextInt();
-        System.out.print("Número 2: ");
-        int b = teclado.nextInt();
-        System.out.print("Número 3: ");
-        int c = teclado.nextInt();
+        int a = Funcionetes.lligInt("Número 1: ");
+        int b = Funcionetes.lligInt("Número 2: ");
+        int c = Funcionetes.lligInt("Número 3: ");
 
         int mayor = a;
         if (b > mayor) {
@@ -245,6 +239,7 @@ public class Ejercicio07 {
 **Explicación para tontos**
 
 - Suponemos que el mayor es el primero.
+- Con `Funcionetes.lligInt` pedimos cada número validando la entrada.
 - Si encontramos uno más grande, reemplazamos.
 
 ---
@@ -258,13 +253,9 @@ Pide una nota decimal (0–10) y muestra `ins`, `suf`, `bé`, `not`, `exc` o `er
 **Solución en Java**
 
 ```java
-import java.util.Scanner;
-
 public class Ejercicio08 {
     public static void main(String[] args) {
-        Scanner teclado = new Scanner(System.in);
-        System.out.print("Nota (0-10): ");
-        double nota = teclado.nextDouble();
+        double nota = Funcionetes.lligDouble("Nota (0-10): ");
 
         if (nota < 0 || nota > 10) {
             System.out.println("error");
@@ -285,6 +276,7 @@ public class Ejercicio08 {
 
 **Explicación para tontos**
 
+- `Funcionetes.lligDouble` valida que realmente haya un número con decimales.
 - Comprobamos el rango primero.
 - Luego vamos cubriendo tramos crecientes de nota.
 
@@ -299,13 +291,9 @@ Pide una nota entera y muestra el texto correspondiente usando `switch`. Si est�
 **Solución en Java**
 
 ```java
-import java.util.Scanner;
-
 public class Ejercicio09 {
     public static void main(String[] args) {
-        Scanner teclado = new Scanner(System.in);
-        System.out.print("Nota entera (0-10): ");
-        int nota = teclado.nextInt();
+        int nota = Funcionetes.lligInt("Nota entera (0-10): ");
 
         switch (nota) {
             case 0: case 1: case 2: case 3: case 4:
@@ -333,6 +321,7 @@ public class Ejercicio09 {
 **Explicación para tontos**
 
 - Agrupamos casos sin repetir código.
+- El input se valida con `Funcionetes.lligInt`, así que evitamos letras.
 - `default` cubre notas no válidas.
 
 ---
@@ -346,18 +335,11 @@ Lee dos números y un carácter (`s/+`, `r/-`, `m/*/x`, `d/`/) y realiza la oper
 **Solución en Java**
 
 ```java
-import java.util.Scanner;
-
 public class Ejercicio10 {
     public static void main(String[] args) {
-        Scanner teclado = new Scanner(System.in);
-        System.out.print("Número A: ");
-        double a = teclado.nextDouble();
-        System.out.print("Número B: ");
-        double b = teclado.nextDouble();
-        teclado.nextLine();
-        System.out.print("Operación (s/r/m/d): ");
-        char op = teclado.nextLine().charAt(0);
+        double a = Funcionetes.lligDouble("Número A: ");
+        double b = Funcionetes.lligDouble("Número B: ");
+        char op = Funcionetes.lligLletra("Operación (s/r/m/d): ");
 
         double resultado;
         switch (op) {
@@ -388,6 +370,7 @@ public class Ejercicio10 {
 
 **Explicación para tontos**
 
+- `Funcionetes` gestiona tanto números (`lligDouble`) como letras (`lligLletra`).
 - Aceptamos varias letras/símbolos para cada operación.
 - Si la operación no existe o b es 0, avisamos y salimos.
 
@@ -402,19 +385,14 @@ Pide un número y luego pregunta continuamente por su cuadrado hasta que el usua
 **Solución en Java**
 
 ```java
-import java.util.Scanner;
-
 public class Ejercicio11 {
     public static void main(String[] args) {
-        Scanner teclado = new Scanner(System.in);
-        System.out.print("Número base: ");
-        int numero = teclado.nextInt();
+        int numero = Funcionetes.lligInt("Número base: ");
         int esperado = numero * numero;
         int respuesta;
 
         do {
-            System.out.print("¿Cuál es su cuadrado? ");
-            respuesta = teclado.nextInt();
+            respuesta = Funcionetes.lligInt("¿Cuál es su cuadrado? ");
         } while (respuesta != esperado);
 
         System.out.println("¡Correcto!");
@@ -425,6 +403,7 @@ public class Ejercicio11 {
 **Explicación para tontos**
 
 - Calculamos el cuadrado una vez.
+- `Funcionetes.lligInt` se encarga de validar cada intento.
 - Usamos `do-while` para que la pregunta salga mínimo una vez.
 
 ---
@@ -438,19 +417,15 @@ Pide notas hasta que se introduzca `-1`. Muestra la media, cuántas aprobadas y 
 **Solución en Java**
 
 ```java
-import java.util.Scanner;
-
 public class Ejercicio12 {
     public static void main(String[] args) {
-        Scanner teclado = new Scanner(System.in);
         int suma = 0;
         int contador = 0;
         int aprobadas = 0;
         int suspensas = 0;
 
         while (true) {
-            System.out.print("Nota (-1 para terminar): ");
-            int nota = teclado.nextInt();
+            int nota = Funcionetes.lligInt("Nota (-1 para terminar): ");
             if (nota == -1) {
                 break;
             }
@@ -477,6 +452,7 @@ public class Ejercicio12 {
 
 **Explicación para tontos**
 
+- `Funcionetes.lligInt` evita entradas no numéricas.
 - `while(true)` y `break` al ver `-1`.
 - Contamos todos los datos para la media.
 
@@ -539,13 +515,9 @@ Pide un número y muestra su tabla de multiplicar del 1 al 10.
 **Solución en Java**
 
 ```java
-import java.util.Scanner;
-
 public class Ejercicio15 {
     public static void main(String[] args) {
-        Scanner teclado = new Scanner(System.in);
-        System.out.print("Tabla del: ");
-        int n = teclado.nextInt();
+        int n = Funcionetes.lligInt("Tabla del: ");
         for (int i = 1; i <= 10; i++) {
             System.out.println(n + " x " + i + " = " + (n * i));
         }
@@ -555,6 +527,7 @@ public class Ejercicio15 {
 
 **Explicación para tontos**
 
+- Pedimos la tabla con `Funcionetes.lligInt`.
 - El contador va de 1 a 10 y multiplicamos por `n`.
 
 ---
@@ -568,15 +541,11 @@ Lee 10 números y muestra el mayor de todos.
 **Solución en Java**
 
 ```java
-import java.util.Scanner;
-
 public class Ejercicio16 {
     public static void main(String[] args) {
-        Scanner teclado = new Scanner(System.in);
         int maximo = Integer.MIN_VALUE;
         for (int i = 1; i <= 10; i++) {
-            System.out.print("Número " + i + ": ");
-            int n = teclado.nextInt();
+            int n = Funcionetes.lligInt("Número " + i + ": ");
             if (n > maximo) {
                 maximo = n;
             }
@@ -588,6 +557,7 @@ public class Ejercicio16 {
 
 **Explicación para tontos**
 
+- `Funcionetes.lligInt` lee cada número con validación.
 - Partimos del valor más pequeño posible y lo vamos sustituyendo.
 
 ---
@@ -601,17 +571,13 @@ Lee 10 números y calcula máximo, mínimo y media.
 **Solución en Java**
 
 ```java
-import java.util.Scanner;
-
 public class Ejercicio17 {
     public static void main(String[] args) {
-        Scanner teclado = new Scanner(System.in);
         int max = Integer.MIN_VALUE;
         int min = Integer.MAX_VALUE;
         int suma = 0;
         for (int i = 1; i <= 10; i++) {
-            System.out.print("Número " + i + ": ");
-            int n = teclado.nextInt();
+            int n = Funcionetes.lligInt("Número " + i + ": ");
             if (n > max) {
                 max = n;
             }
@@ -630,6 +596,7 @@ public class Ejercicio17 {
 
 **Explicación para tontos**
 
+- `Funcionetes.lligInt` simplifica la lectura de cada valor.
 - Actualizamos `max` y `min` a medida que leemos.
 - Al final dividimos la suma entre 10.
 
@@ -672,13 +639,9 @@ Calcula `n!` usando las variantes pedidas (for ascendente/descendente, while asc
 **Solución en Java (for ascendente)**
 
 ```java
-import java.util.Scanner;
-
 public class Ejercicio19 {
     public static void main(String[] args) {
-        Scanner teclado = new Scanner(System.in);
-        System.out.print("Número (>=0): ");
-        int n = teclado.nextInt();
+        int n = Funcionetes.lligInt("Número (>=0): ");
         long factorial = 1;
         for (int i = 1; i <= n; i++) {
             factorial *= i;
@@ -770,13 +733,9 @@ Pide una cantidad de euros y desglósala en el mínimo número de billetes (500,
 **Solución en Java**
 
 ```java
-import java.util.Scanner;
-
 public class Ejercicio22 {
     public static void main(String[] args) {
-        Scanner teclado = new Scanner(System.in);
-        System.out.print("Cantidad en euros: ");
-        int cantidad = teclado.nextInt();
+        int cantidad = Funcionetes.lligInt("Cantidad en euros: ");
         int[] billetes = {500, 200, 100, 50, 20, 10, 5, 1};
 
         for (int valor : billetes) {
@@ -794,6 +753,7 @@ public class Ejercicio22 {
 
 **Explicación para tontos**
 
+- `Funcionetes.lligInt` asegura que la cantidad sea entera.
 - Dividimos por cada billete empezando por el más grande.
 - Guardamos el resto para los billetes siguientes.
 
@@ -808,18 +768,14 @@ Lee 10 números y di si hubo algún negativo, además de contar pares e impares.
 **Solución en Java**
 
 ```java
-import java.util.Scanner;
-
 public class Ejercicio23 {
     public static void main(String[] args) {
-        Scanner teclado = new Scanner(System.in);
         boolean hayNegativo = false;
         int pares = 0;
         int impares = 0;
 
         for (int i = 1; i <= 10; i++) {
-            System.out.print("Número " + i + ": ");
-            int n = teclado.nextInt();
+            int n = Funcionetes.lligInt("Número " + i + ": ");
             if (n < 0) {
                 hayNegativo = true;
             }
@@ -841,6 +797,7 @@ public class Ejercicio23 {
 
 - Marcamos una bandera cuando aparece un negativo.
 - `% 2` nos dice si es par (`resto 0`).
+- `Funcionetes.lligInt` controla que siempre recibimos un entero.
 
 ---
 
@@ -853,15 +810,10 @@ Calcula `base^exponente` solo con multiplicaciones repetidas. Maneja exponentes 
 **Solución en Java**
 
 ```java
-import java.util.Scanner;
-
 public class Ejercicio24 {
     public static void main(String[] args) {
-        Scanner teclado = new Scanner(System.in);
-        System.out.print("Base: ");
-        int base = teclado.nextInt();
-        System.out.print("Exponente: ");
-        int exp = teclado.nextInt();
+        int base = Funcionetes.lligInt("Base: ");
+        int exp = Funcionetes.lligInt("Exponente: ");
 
         double resultado = 1;
         int veces = Math.abs(exp);
@@ -880,6 +832,7 @@ public class Ejercicio24 {
 
 - Multiplicamos `base` por sí misma `|exp|` veces.
 - Si el exponente es negativo, damos la vuelta (`1 / resultado`).
+- `Funcionetes.lligInt` ya valida que ambas lecturas son enteras.
 
 ---
 
@@ -892,18 +845,16 @@ El usuario piensa un número entre 1 y 100. El programa lo adivina preguntando s
 **Solución en Java**
 
 ```java
-import java.util.Scanner;
-
 public class Ejercicio25 {
     public static void main(String[] args) {
-        Scanner teclado = new Scanner(System.in);
         int minimo = 1;
         int maximo = 100;
 
         while (true) {
             int intento = (minimo + maximo) / 2;
-            System.out.print("¿Es " + intento + "? (m=mayor, n=menor, i=igual): ");
-            char respuesta = teclado.nextLine().charAt(0);
+            char respuesta = Character.toLowerCase(
+                Funcionetes.lligLletra("¿Es " + intento + "? (m=mayor, n=menor, i=igual): ")
+            );
 
             if (respuesta == 'i') {
                 System.out.println("¡Adivinado!");
@@ -925,6 +876,7 @@ public class Ejercicio25 {
 - Usamos búsqueda binaria: probamos siempre la mitad del intervalo.
 - Si el usuario dice "mayor", descartamos la mitad inferior; si dice "menor", la superior.
 - Terminamos cuando responde "igual".
+- `Funcionetes.lligLletra` garantiza que consumimos solo un carácter y no queda basura en el buffer.
 
 ---
 
@@ -937,17 +889,13 @@ El ordenador genera un número aleatorio (1–100) y el usuario intenta adivinar
 **Solución en Java**
 
 ```java
-import java.util.Scanner;
-
 public class Ejercicio26 {
     public static void main(String[] args) {
-        Scanner teclado = new Scanner(System.in);
         int secreto = (int) (Math.random() * 100) + 1;
         int intento;
 
         do {
-            System.out.print("Adivina (1-100): ");
-            intento = teclado.nextInt();
+            intento = Funcionetes.lligInt("Adivina (1-100): ");
             if (intento < secreto) {
                 System.out.println("Es mayor");
             } else if (intento > secreto) {
@@ -964,6 +912,7 @@ public class Ejercicio26 {
 
 - `Math.random()` devuelve un decimal 0–1; lo escalamos a 1–100.
 - Repetimos con `do-while` hasta acertar, dando pistas comparando con el número secreto.
+- `Funcionetes.lligInt` evita entradas no numéricas durante los intentos.
 
 ---
 
