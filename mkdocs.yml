@@ -1,0 +1,59 @@
+site_name: Chuleta UD5 Java
+site_description: "Chuleta visual de la UD5: Introducción a Java"
+site_author: "Copilot"
+nav:
+  - Inicio: index.md
+  - Plataforma Java:
+      - "1. ¿Qué es Java?": plataforma.md
+      - "2. Herramientas básicas": herramientas.md
+  - "Tipos y datos": datos.md
+  - Operadores: operadores.md
+  - "Salida de datos": salida.md
+  - "Entrada de datos": entrada.md
+  - "Estructuras de control": control.md
+  - Excepciones: excepciones.md
+  - Comentarios: comentarios.md
+  - Ejercicios: ejercicios.md
+  - Anexos:
+      - "Funciones IO": anexos/funciones_io.md
+      - "Fechas y formatos": anexos/fechas.md
+theme:
+  name: material
+  language: es
+  palette:
+    - scheme: default
+      primary: indigo
+      accent: amber
+      toggle:
+        icon: material/weather-night
+        name: Cambiar a modo oscuro
+    - scheme: slate
+      primary: indigo
+      accent: amber
+      toggle:
+        icon: material/weather-sunny
+        name: Cambiar a modo claro
+  features:
+    - navigation.sections
+    - navigation.indexes
+    - navigation.top
+    - navigation.tabs
+    - toc.integrate
+    - content.code.copy
+    - content.tabs.link
+plugins:
+  - search
+markdown_extensions:
+  - admonition
+  - attr_list
+  - codehilite
+  - footnotes
+  - tables
+  - toc:
+      permalink: true
+      slugify: !!python/name:pymdownx.slugs.uslugify
+extra:
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/
+      name: GitHub
